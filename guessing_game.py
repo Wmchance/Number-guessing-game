@@ -34,7 +34,7 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
-    user_name = input("What's your name? ")
+    user_name = input("Enter player name: ")
     print('Welcome to the game,', user_name, '!')
 
     solution_num = random.randint(1, 100)
@@ -51,12 +51,16 @@ def start_game():
       else:
         guess_num = int(input("It's higher. Guess again: "))
         attempts.append(guess_num)
-    print('You got it in', len(attempts), 'guesses!')
+    
+    print('You got it!')
     print('Total attempts:', len(attempts))
     print('mean:', mean(attempts))
     print('median:', median(attempts))
     print('mode:', mode(attempts))
 
+    play_again = input('Would you like to play again(Y/N)? ')
+    if play_again == 'Y':
+      start_game()
 
 
 # Kick off the program by calling the start_game function.
