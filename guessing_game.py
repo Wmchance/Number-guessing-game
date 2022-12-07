@@ -47,15 +47,25 @@ def start_game():
       try:
         if guess_num == False:
           guess_num = int(input('Guess a number from 1-100: '))
-        elif guess_num > solution_num:
+          if guess_num > 100 or guess_num < 1:
+            guess_num = attempts[-1]
+            raise ValueError
+        elif guess_num > solution_num and guess_num <= 100:
           guess_num = int(input("It's lower. Guess again: "))
-        else:
+          if guess_num > 100 or guess_num < 1:
+            guess_num = attempts[-1]
+            raise ValueError
+        elif guess_num < solution_num:
           guess_num = int(input("It's higher. Guess again: "))
+          if guess_num > 100 or guess_num < 1:
+            guess_num = attempts[-1]
+            raise ValueError
       except ValueError:
-        print('Sorry, only numbers can be entered')
+        print('Sorry, only numbers between 1 & 100 can be guessed')
       else:
         attempts.append(guess_num)
     
+    print(attempts) #Remove after testing is done
     print('You got it!')
     print(f'Total attempts: {len(attempts)}')
     print(f'mean: {mean(attempts)}')
