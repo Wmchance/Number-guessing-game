@@ -44,29 +44,59 @@ def start_game():
 
     try:
       guess_num = int(input('Guess a number from 1-100: '))
-      attempts.append(guess_num)
+      if guess_num > 100 or guess_num < 1:
+        print('Sorry, only numbers between 1 & 100 can be entered')
+        guess_num = int(input('Please try a number from 1-100: '))
+        attempts.append(guess_num)
+      else:
+        attempts.append(guess_num)
     except ValueError:
       print('Sorry, only numbers can be entered')
       guess_num = int(input('Please try a number from 1-100: '))
-      attempts.append(guess_num)
+      if guess_num > 100 or guess_num < 1:
+        print('Sorry, only numbers between 1 & 100 can be entered')
+        guess_num = int(input('Please try a number from 1-100: '))
+        attempts.append(guess_num)
+      else:
+        attempts.append(guess_num)
 
     while guess_num != solution_num:
       if guess_num > solution_num:
         try:
           guess_num = int(input("It's lower. Guess again: "))
-          attempts.append(guess_num)
+          if guess_num > 100 or guess_num < 1:
+            print('Sorry, only numbers between 1 & 100 can be entered')
+            guess_num = int(input('Please try a number from 1-100: '))
+            attempts.append(guess_num)
+          else:
+            attempts.append(guess_num)
         except ValueError:
           print('Sorry, only numbers can be entered')
           guess_num = int(input('Please try a number from 1-100: '))
-          attempts.append(guess_num)
+          if guess_num > 100 or guess_num < 1:
+            print('Sorry, only numbers between 1 & 100 can be entered')
+            guess_num = int(input('Please try a number from 1-100: '))
+            attempts.append(guess_num)
+          else:
+            attempts.append(guess_num)
       else:
         try:
           guess_num = int(input("It's higher. Guess again: "))
-          attempts.append(guess_num)
+          if guess_num > 100 or guess_num < 1:
+            print('Sorry, only numbers between 1 & 100 can be entered')
+            guess_num = int(input('Please try a number from 1-100: '))
+            attempts.append(guess_num)
+          else:
+            attempts.append(guess_num)
         except ValueError:
           print('Sorry, only numbers can be entered')
           guess_num = int(input('Please try a number from 1-100: '))
-          attempts.append(guess_num)
+          if guess_num > 100 or guess_num < 1:
+            print('Sorry, only numbers between 1 & 100 can be entered')
+            guess_num = int(input('Please try a number from 1-100: '))
+            attempts.append(guess_num)
+          else:
+            attempts.append(guess_num)
     
     print('You got it!')
     print(f'Total attempts: {len(attempts)}')
