@@ -35,7 +35,7 @@ def start_game():
     """
     # write your code inside this function.
     user_name = input("Enter player name: ")
-    print('Welcome to the game,', user_name, '!')
+    print(f'Welcome to the game, {user_name}! \U0001f44b')
 
     solution_num = random.randint(1, 100)
     print(solution_num) #Remove after testing is done
@@ -53,14 +53,16 @@ def start_game():
         attempts.append(guess_num)
     
     print('You got it!')
-    print('Total attempts:', len(attempts))
-    print('mean:', mean(attempts))
-    print('median:', median(attempts))
-    print('mode:', mode(attempts))
+    print(f'Total attempts: {len(attempts)}')
+    print(f'mean: {mean(attempts)}')
+    print(f'median: {median(attempts)}')
+    print(f'mode: {mode(attempts)}')
 
     play_again = input('Would you like to play again(Y/N)? ')
     if play_again.lower() == 'y':
       start_game()
+    else:
+      print('Goodbye! Come play again soon \U0001f600')
 
 
 # Kick off the program by calling the start_game function.
