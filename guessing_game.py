@@ -12,7 +12,7 @@ import random
 
 
 def start_game():
-    """Psuedo-code Hints
+    """Pseudo-code Hints
     
     When the program starts, we want to:
     ------------------------------------
@@ -31,7 +31,19 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
+    user_name = input("What's your name? ")
+    print('Welcome to the game,', user_name, '!')
 
+    solution_num = random.randint(1, 100)
+    print(solution_num)
+
+    guess_num = int(input('Guess a number from 1-100: '))
+    while guess_num != solution_num:
+      if guess_num > solution_num:
+        guess_num = int(input("It's lower. Guess again: "))
+      else:
+        guess_num = int(input("It's higher. Guess again: "))
+    print('You got it!')
 
 
 # Kick off the program by calling the start_game function.
