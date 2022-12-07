@@ -59,7 +59,7 @@ def start_game():
     print('mode:', mode(attempts))
 
     play_again = input('Would you like to play again(Y/N)? ')
-    if play_again == 'Y':
+    if play_again.lower() == 'y':
       start_game()
 
 
