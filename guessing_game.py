@@ -9,6 +9,9 @@ NOTE: If you prefer to work locally on your own computer, you can totally do tha
 """
 
 import random
+from statistics import median
+from statistics import mode
+from statistics import mean
 
 
 def start_game():
@@ -48,8 +51,12 @@ def start_game():
       else:
         guess_num = int(input("It's higher. Guess again: "))
         attempts.append(guess_num)
-    print('You got it!')
+    print('You got it in', len(attempts), 'guesses!')
     print('Total attempts:', len(attempts))
+    print('mean:', mean(attempts))
+    print('median:', median(attempts))
+    print('mode:', mode(attempts))
+
 
 
 # Kick off the program by calling the start_game function.
