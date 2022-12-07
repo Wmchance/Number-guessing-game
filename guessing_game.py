@@ -48,7 +48,7 @@ def start_game():
         if guess_num == False:
           guess_num = int(input('Guess a number from 1-100: '))
           if guess_num > 100 or guess_num < 1:
-            guess_num = attempts[-1]
+            guess_num = False
             raise ValueError
         elif guess_num > solution_num and guess_num <= 100:
           guess_num = int(input("It's lower. Guess again: "))
