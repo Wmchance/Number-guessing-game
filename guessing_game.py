@@ -37,17 +37,19 @@ def start_game():
     solution_num = random.randint(1, 100)
     print(solution_num) #Remove after testing is done
 
-    attempts = 1
+    attempts = []
 
     guess_num = int(input('Guess a number from 1-100: '))
+    attempts.append(guess_num)
     while guess_num != solution_num:
-      attempts += 1
       if guess_num > solution_num:
         guess_num = int(input("It's lower. Guess again: "))
+        attempts.append(guess_num)
       else:
         guess_num = int(input("It's higher. Guess again: "))
+        attempts.append(guess_num)
     print('You got it!')
-    print('Total guesses:', attempts)
+    print('Total attempts:', len(attempts))
 
 
 # Kick off the program by calling the start_game function.
