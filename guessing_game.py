@@ -14,6 +14,10 @@ from statistics import mode
 from statistics import mean
 
 high_score = 0
+scores_list = []
+
+user_name = input("Enter player name: ")
+print(f'Welcome to the game, {user_name}! \U0001f44b')
 
 def start_game(high_score):
     """Pseudo-code Hints
@@ -35,8 +39,6 @@ def start_game(high_score):
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
-    user_name = input("Enter player name: ")
-    print(f'Welcome to the game, {user_name}! \U0001f44b')
 
     print(f"Current High Score: {high_score}")
 
@@ -68,10 +70,8 @@ def start_game(high_score):
         attempts.append(guess_num)
     
     print('You got it!')
-    print(f'Total attempts: {len(attempts)}')
-    print(f'mean: {mean(attempts)}')
-    print(f'median: {median(attempts)}')
-    print(f'mode: {mode(attempts)}')
+    print(f'Attempts: {len(attempts)}')
+    scores_list.append(len(attempts))
 
     play_again = input('Would you like to play again(Y/N)? ')
     if play_again.lower() == 'y':
@@ -81,6 +81,9 @@ def start_game(high_score):
         start_game(high_score)
     else:
       print('Goodbye! Come play again soon \U0001f600')
+      print(f'Score mean: {mean(scores_list)}')
+      print(f'Score median: {median(scores_list)}')
+      print(f'Score mode: {mode(scores_list)}')
 
 
 # Kick off the program by calling the start_game function.
