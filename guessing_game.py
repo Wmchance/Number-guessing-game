@@ -13,8 +13,9 @@ from statistics import median
 from statistics import mode
 from statistics import mean
 
+high_score = 0
 
-def start_game():
+def start_game(high_score):
     """Pseudo-code Hints
     
     When the program starts, we want to:
@@ -36,6 +37,8 @@ def start_game():
     # write your code inside this function.
     user_name = input("Enter player name: ")
     print(f'Welcome to the game, {user_name}! \U0001f44b')
+
+    print(f"Current High Score: {high_score}")
 
     solution_num = random.randint(1, 100)
     print(solution_num) #Remove after testing is done
@@ -74,10 +77,13 @@ def start_game():
 
     play_again = input('Would you like to play again(Y/N)? ')
     if play_again.lower() == 'y':
-      start_game()
+      if len(attempts) < high_score or high_score == 0:
+        start_game(len(attempts))
+      else: 
+        start_game(high_score)
     else:
       print('Goodbye! Come play again soon \U0001f600')
 
 
 # Kick off the program by calling the start_game function.
-start_game()
+start_game(high_score)
