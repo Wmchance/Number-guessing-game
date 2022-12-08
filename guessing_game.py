@@ -41,7 +41,6 @@ def start_game(high_score):
     print(f"Current High Score: {high_score}")
 
     solution_num = random.randint(1, 100)
-    print(solution_num) #Remove after testing is done
 
     attempts = []
     guess_num = False
@@ -68,7 +67,6 @@ def start_game(high_score):
       else:
         attempts.append(guess_num)
     
-    print(attempts) #Remove after testing is done
     print('You got it!')
     print(f'Total attempts: {len(attempts)}')
     print(f'mean: {mean(attempts)}')
