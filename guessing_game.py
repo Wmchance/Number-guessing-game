@@ -40,7 +40,8 @@ def start_game(high_score):
     """
     # write your code inside this function.
 
-    print(f"Current High Score: {high_score}")
+    if high_score != 0:
+      print(f"Current High Score: {high_score}")
 
     solution_num = random.randint(1, 100)
 
