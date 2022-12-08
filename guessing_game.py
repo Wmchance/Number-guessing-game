@@ -73,7 +73,7 @@ def start_game(high_score):
         attempts.append(guess_num)
     
     print('You got it!')
-    print(f'Attempts: {len(attempts)}')
+    print(f'Score: {len(attempts)}')
     scores_list.append(len(attempts))
 
     play_again = input('Would you like to play again(Y/N)? ')
